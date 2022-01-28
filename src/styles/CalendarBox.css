@@ -1,0 +1,32 @@
+.calendar-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 70%;
+    height: 80%; 
+}
+
+.calendar-box__info {
+    display: flex;
+    background:linear-gradient( to bottom right, #122d4d, #1771B5, white 99% ); 
+
+   
+}
+
+.calendar__monthyear-container {
+    display: flex;
+}
+
+.calendar-box__week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #1771B5;
+
+   
+}
+
+.calendar-box__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 100%;
+}

@@ -1,0 +1,8 @@
+.calendar-date-view-selector {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-date-view-selector__instruc {
+    display: flex;
+}

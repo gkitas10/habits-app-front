@@ -1,0 +1,32 @@
+.form-row {
+    display:flex;
+    justify-content:space-between;
+}
+
+.form-group {
+    display: flex;
+    
+}
+
+.form-control {
+    color: #eee;
+    background-color:#303245;
+    -webkit-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    min-height: 1.7rem;
+    border-radius: 8px;
+}
+
+.form-control::placeholder {
+    margin-left: 1rem;
+}
+
+.form-row__delete-button {
+    background-color: #d02929;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    padding: .3em .9em;
+    border-radius: 60px;
+}

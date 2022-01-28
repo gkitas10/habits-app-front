@@ -1,0 +1,48 @@
+.newtasklistform {
+    background-color:white;
+    min-width: 30rem;
+    border-radius: 20px;
+    padding: 2.2em;
+    
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: black;
+    font-family: sans-serif;
+}
+
+.newtasklist__form-control {
+    color: #eee;
+    background-color:#303245;
+    -webkit-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    min-height: 1.7rem;
+    border-radius:8px;
+}
+
+button {
+    background-color: #38b128;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    padding: .3em .9em;
+    border-radius: 60px;
+    margin-bottom: 1rem;
+}
+
+.newtasklistform__submit-btn {
+    background-color:#2ECCFA;
+    border:none;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    color:white;
+    cursor: pointer;
+}
+
+/* https://codepen.io/ehermanson/pen/KwKWEv?editors=1100 */

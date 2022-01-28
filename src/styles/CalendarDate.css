@@ -1,0 +1,24 @@
+.calendar-date {
+    border: thin solid #949ea9;
+    border-left: none;
+    border-top: none;
+}
+
+.lastmonth {
+    background-color: #b7bec5;
+    border: none;
+}
+
+.currentmonth {
+    background-color: azure;
+}
+
+.today {
+    background-color: #097834;
+}
+
+.selected-date {
+    border: medium solid gold;
+    position: relative;
+    z-index: 100;
+}

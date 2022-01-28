@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import CreateTaskList from './components/CreateTaskList';
+import Calendar from './components/Calendar';
+import Stats from './components/Stats';
+import Header from './components/Header';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Router>
+          <Header/>
+          <Switch>
+            <ProtectedRoute component={CreateTaskList} path="/create-task-scheme"/>
+            <ProtectedRoute component={Calendar} path="/calendar"/>
+            <ProtectedRoute component={Stats} path='/stats'/>
+          </Switch>
+        </Router>
+      </div>
   );
 }
 
