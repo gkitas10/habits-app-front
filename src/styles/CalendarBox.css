@@ -2,27 +2,44 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 70%;
-    height: 80%; 
+    width: 100%;
+    border: none;
+    /* height: 80vh; */
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .calendar-box__info {
     display: flex;
-    background:linear-gradient( to bottom right, #122d4d, #1771B5, white 99% ); 
-
-   
+    background-color:cadetblue;
+    padding: 1rem;
+    
 }
 
 .calendar__monthyear-container {
     display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-left: 1em;
+}
+
+.calendar__month {
+    margin-right: .3rem;
+    font-size: 1.2rem;
+}
+
+.calendar__year {
+    font-size: 1.2rem;
 }
 
 .calendar-box__week {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    background: #1771B5;
+    background: cadetblue;
+}
 
-   
+.calendar-box__day {
+    padding-bottom:.3rem;
+    text-align: center;
 }
 
 .calendar-box__dates {
@@ -30,3 +47,55 @@
     grid-template-columns: repeat(7, 1fr);
     height: 100%;
 }
+
+
+
+/* .calendar-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    border: none;
+    height: 80vh;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.calendar-box__info {
+    display: flex;
+    background-color:cadetblue;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+.calendar__monthyear-container {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-right: 1rem;
+}
+
+.calendar__month {
+    margin-right: .3rem;
+    font-size: 1.2rem;
+}
+
+.calendar__year {
+    font-size: 1.2rem;
+}
+
+.calendar-box__week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: cadetblue;
+}
+
+.calendar-box__day {
+    padding-bottom:.3rem;
+    text-align: center;
+}
+
+.calendar-box__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 100%;
+} */

@@ -1,38 +1,32 @@
 import { useState, useEffect } from 'react';
+import { getPerformanceStyle } from '../functions/CalendarDate/getPerformanceStyle';
 import '../styles/CalendarDate.css';
 import axiosClient from '../axios';
 import { useAuth0 } from '@auth0/auth0-react';
-import useSelectList from './custom-hooks/useSelectList';
 
-const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate, setHighlighteddate, setSelectedday }) => {
-    const { getAccessTokenSilently, user } = useAuth0()
-    console.log('render date');
+const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate, performanceDB, setHighlighteddate, setSelectedday, performanceonscreen, selecteddaywithlist }) => {
+    const { getAccessTokenSilently } = useAuth0()
     const currentDate = new Date();
-    const currentDayNumber = currentDate.getDate()
+    const currentDayNumber = currentDate.getDate();
     const currentMonth = currentDate.getMonth();
     const currentYear = currentDate.getFullYear();
     //Current Date with time 00000
-    const currentDateNoTime = new Date(currentYear, currentMonth, currentDayNumber).toString();
-    const componentDate = new Date(year, monthnumber, daynumber).toString();
+    const currentDateNoTime = new Date(currentYear, currentMonth, currentDayNumber).toISOString();
+    const componentDate = new Date(year, monthnumber, daynumber);
+    //Check if it's a valid date obj
+    const componentDateString = componentDate instanceof Date && !isNaN(componentDate.getTime()) ? componentDate.toISOString() : componentDate.toString();    
     const monthStyle = lastmonth ? 'lastmonth' : 'currentmonth'; 
-    const todayStyle =  componentDate === currentDateNoTime ? 'today' : '';
-    let selectedDateStyle = highlighteddate === componentDate ? 'selected-date' : null;
-    // const [ selecteddatestyle, setSelecteddatestyle ] = useState('');
-
-    useEffect(() => {
-        console.log('mount');
-        return () => {
-             
-            console.log('unmount');
-        }
-          
-    },[]);
-
+    const todayStyle =  componentDateString === currentDateNoTime && !lastmonth ? 'today' : '';
+    let selectedDateStyle = highlighteddate === componentDateString ? 'selected-date' : null;
+    //Class based on performance
+    const performanceStyle = getPerformanceStyle(performanceDB, performanceonscreen, daynumber, selecteddaywithlist);
+    const [ performancestyle, setPerformancestyle ] = useState(performanceStyle);
+    
     const handleClick = async () => {
         if(!lastmonth) {    
              try {
                 const token = await getAccessTokenSilently();
-                const dayDB = await axiosClient.get(`/get-day?date=${componentDate}`, {
+                const dayDB = await axiosClient.get(`/get-day?date=${componentDateString}`, {
                     headers:{
                         Authorization:`Bearer ${token}`
                     }
@@ -43,7 +37,7 @@ const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate
 
                 if(dayDB.data.dayDB === null) {
                     savedDayDB = await axiosClient.post('/save-day', {
-                        date:componentDate
+                        date:componentDateString
                     }, {
                         headers:{
                             Authorization:`Bearer ${token}`
@@ -51,14 +45,11 @@ const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate
                     })
                     
                     selectedDay = savedDayDB.data;
-                    console.log(selectedDay,'post');
                 }else {
                     selectedDay = dayDB.data.dayDB;
-                    console.log(selectedDay,'2');
                 }
 
-                
-                setHighlighteddate(componentDate);
+                setHighlighteddate(componentDateString);
                 //Usar selected day del custom hook (setSelectedDayWithList)
                 setSelectedday({
                     ...selectedDay
@@ -73,8 +64,11 @@ const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate
     return ( 
         <div
         onClick={ handleClick }
-        className={`calendar-date ${monthStyle} ${todayStyle} ${selectedDateStyle}`}>
-            { daynumber }
+        className={`calendar-date ${monthStyle} ${todayStyle} ${selectedDateStyle} ${performanceStyle} ${performancestyle}`}>
+            <div className='calendar-date__daynumber'>
+                { daynumber }
+            </div>
+            
         </div>
      );
 }

@@ -1,0 +1,41 @@
+.header__nav-mobile {
+    width: 30%;
+} 
+
+.header__ul-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #424242;
+    list-style: none;
+    position: absolute;
+    top:10vh;
+    margin:0;
+    padding:0;
+    left:0;
+    right: 0;
+    padding: 1em 1em;
+    
+}
+
+.header__link-mobile {
+    text-decoration: none;
+    color:white;
+}
+
+@media screen and (min-width:600px) {
+    .header__ul-mobile {
+        top:15vh;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .header__ul-mobile {
+        top:8vh;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .header__ul-mobile {
+        display: none;
+    }
+}

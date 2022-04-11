@@ -1,0 +1,11 @@
+.tasklist-selector {
+    min-height: 1.7rem;
+}
+
+@media screen and (min-width:600px) {
+    .tasklist-selector {
+        width: 100%;
+    }
+}
+    
+    

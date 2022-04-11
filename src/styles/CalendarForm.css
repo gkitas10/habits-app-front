@@ -1,0 +1,6 @@
+.calendar-form__input-month {
+    -webkit-appearance: none;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 1.7rem;
+}

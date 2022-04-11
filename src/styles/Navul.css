@@ -1,0 +1,30 @@
+.header__ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 0;
+    list-style:none;
+    
+}
+
+.header__link {
+    text-decoration: none;
+    color:white;
+}
+
+@media only screen and (max-width: 768px) {
+    .header__ul {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:1224px) {
+    .header__ul {
+        justify-content: space-around;
+    }
+}
+
+/* @media screen and (min-width:768px) {
+    .header__nav {
+        display: none;
+    }
+} */

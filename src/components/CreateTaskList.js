@@ -5,6 +5,7 @@ const CreateTaskList = () => {
 
     return (  
         <div className='create-task-list'>
+            {/* <div className='create-task-list__instruc'>Crea una lista ¡¡¡</div> */}
             <NewTaskListForm/>
         </div>
     );

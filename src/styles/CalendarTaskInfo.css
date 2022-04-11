@@ -1,25 +1,140 @@
-.calendar-date-task-info {
+/* .calendar-date-task-info {
     display: flex;
     align-self: center;
     width: 50%;
-}
+} 
 
-/* .taskinfo__grid {
+ .taskinfo__grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 } */
 
 .taskinfo__head {
     display: grid;
+    font-size: 1.1rem;
+    font-weight: 400;
     grid-template-columns: repeat(4, 1fr);
+    margin-bottom: .5rem;
 }
 
 .taskinfo__row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin-top: .2rem;
+}
+
+.taskinfo__name {
+    text-align: justify;
 }
 
 .completed {
     width: 33%;
-
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    min-height: 1.7rem;
+    border: 1px solid gray;
 }
+
+.taskinfo__grid {
+    margin-bottom: .8rem;
+}
+
+.taskinfo__table{
+    margin-bottom: .8rem;
+}
+
+.calendar-task-info__form {
+    padding-left: 1.5em;
+    padding-right: 1em;
+}
+
+.task-info__submit-btn-container {
+    text-align: center;
+}
+
+.task-info__submit-btn {
+    background-color:cadetblue;
+    border:none;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    color:white;
+    cursor: pointer;
+    /* margin:0 auto; */
+}
+
+.calendar-task-info__performance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-task-info__performance-title {
+    font-size: 1.5rem;
+    margin:0 auto;
+}
+
+.calendar-task-info__performance {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.calendar-task-info__delete-container {
+    padding-left: 1.5em;
+}
+
+.calendar-task-info__delete-question {
+    cursor: pointer;
+    padding-bottom: 1.5em;
+}
+
+.calendar-task-info__confirm-btn-container {
+    margin-bottom: 1em;
+}
+
+.calendar-task-info__confirm-btn {
+    background-color: cadetblue;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    padding: 0.3em 0.9em;
+    border-radius: 60px;
+}
+
+.calendar-task-info__cancel-btn {
+    background-color: #D02929;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    padding: 0.3em 0.9em;
+    border-radius: 60px;
+    margin-left: .5em;
+}
+
+@media screen and (min-width:600px) {
+    .taskinfo__table{
+        margin-bottom: 1.5em;
+    }
+
+    .taskinfo__grid {
+        margin-bottom: 1.5em;
+    }
+
+    .task-info__submit-btn {
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width:1224px) {
+    .task-info__submit-btn {
+        width: auto;
+        font-size: 1.05em;
+    }
+
+    .taskinfo__grid {
+        margin-bottom: 2em;
+    }
+    
+}
+
+

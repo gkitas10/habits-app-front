@@ -1,8 +1,96 @@
-.calendar-date {
+ .calendar-date {
     border: thin solid #949ea9;
     border-left: none;
     border-top: none;
+    cursor: pointer;
+    display: flex;
+    padding-left: .2em;
+    padding-top: .2em;
+    height: 50px;
 }
+
+.calendar-date:nth-child(7), .calendar-date:nth-child(14),
+.calendar-date:nth-child(21), .calendar-date:nth-child(28),
+.calendar-date:nth-child(35) {
+    border-right: none;
+} 
+
+.lastmonth {
+    background-color: #b7bec5;
+    border: none;
+    border-bottom: thin solid #949ea9;
+}
+
+.currentmonth {
+    background-color: azure;
+}
+
+.today {
+    background-image: url('../assets/icons/calendar.png');
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+}
+
+.selected-date {
+    border: 1px solid black;
+    position: relative;
+    z-index: 100;
+}
+
+.verylow-performance {
+    background-color: #CF3230;
+}
+
+.low-performance {
+    background-color: #FF5733;
+}
+
+.reg-performance {
+    background-color: #EF750F;
+}
+
+.good-performance {
+    background-color: #96E113;
+}
+
+.great-performance {
+    background-color: #E3D917 ;
+}
+
+.black {
+    background-color: black;
+}
+
+@media screen and (min-width:600px) {
+    .calendar-date {
+        height: 50px;
+    }
+}
+
+@media screen and (min-width:1224px) {
+    .calendar-date {
+        height: 80px;
+    }
+}
+
+
+
+/* .calendar-date {
+    border: thin solid #949ea9;
+    border-left: none;
+    border-top: none;
+    cursor: pointer;
+    display: flex;
+    padding-left: .2em;
+    padding-top: .2em;
+}
+
+.calendar-date:nth-child(7), .calendar-date:nth-child(14),
+.calendar-date:nth-child(21), .calendar-date:nth-child(28),
+.calendar-date:nth-child(35) {
+    border-right: none;
+} 
 
 .lastmonth {
     background-color: #b7bec5;
@@ -14,11 +102,38 @@
 }
 
 .today {
-    background-color: #097834;
+    background-image: url('../assets/icons/calendar.png');
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
 }
 
 .selected-date {
-    border: medium solid gold;
+    border: 1px solid black;
     position: relative;
     z-index: 100;
 }
+
+.verylow-performance {
+    background-color: #CF3230;
+}
+
+.low-performance {
+    background-color: #FF5733;
+}
+
+.reg-performance {
+    background-color: #EF750F;
+}
+
+.good-performance {
+    background-color: #96E113;
+}
+
+.great-performance {
+    background-color: #E3D917 ;
+}
+
+.black {
+    background-color: black;
+} */

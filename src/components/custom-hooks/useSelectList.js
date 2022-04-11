@@ -1,16 +1,11 @@
 import { useState, Fragment, useEffect } from "react";
 import axiosClient from "../../axios";
 import { useAuth0 } from '@auth0/auth0-react';
-
+import '../../styles/useSelectList.css';
 
 const useSelectList = (options) => {
     
     const { getAccessTokenSilently } = useAuth0()
-    
-    // useEffect(() => {
-        
-        
-    // }, [])
     
     const [ selecteddaywithlist, setSelectedDayWithList ] = useState({
         date:'',
@@ -19,11 +14,7 @@ const useSelectList = (options) => {
         _id:''
     });   
 
-    console.log(selecteddaywithlist); 
-
     const handleChange = async id => {
-        console.log('change'); 
-        console.log(selecteddaywithlist); 
         const listselected = options.filter(tasklist => tasklist._id === id)[0];
 
         try {
@@ -40,13 +31,13 @@ const useSelectList = (options) => {
 
         } catch (error) {
             console.log(error)
-        }
+        }   
     } 
 
     const SelectList = () => (
         <Fragment>
-            <label>Lista de tareas</label>
-            <select
+            
+            <select className="tasklist-selector"
             onChange={ e => handleChange(e.target.value) }
             >
                 { selecteddaywithlist.tasklist === undefined ? (<option>--Seleccione</option>) : (<option>{ selecteddaywithlist.tasklist?.listname }</option>) }

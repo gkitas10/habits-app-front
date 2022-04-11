@@ -1,5 +1,5 @@
 const getDateDataForState = date => {
-    const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'August', 'september','octuber','november', 'december'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','Octuber','November', 'December'];
     const monthNumber = date.getMonth();
     const monthname = months[`${monthNumber}`];
     const year = date.getFullYear(); 

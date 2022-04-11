@@ -1,8 +1,21 @@
 .create-task-list {
-    padding: 1rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     background-color: #c1bdba;
-    min-height: 100vh;
+    min-height: 90vh;
+    padding:0 1em;
+    display: flex;
+    /* align-items: center; */
 }
+
+@media screen and (min-width:600px) {
+    .create-task-list {
+        height: auto;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .create-task-list {
+        justify-content: center;
+        min-height: 92vh;
+    }
+}
+
