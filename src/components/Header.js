@@ -8,6 +8,7 @@ import NavulMobile from './NavulMobile';
 
 const Header = () => {
     const { isAuthenticated, user } = useAuth0();
+    console.log(user);
     const [ togglenav, setTogglenav ] = useState(false);
     return ( 
         <div className="header">

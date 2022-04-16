@@ -6,6 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate, performanceDB, setHighlighteddate, setSelectedday, performanceonscreen, selecteddaywithlist }) => {
     const { getAccessTokenSilently } = useAuth0()
+
     const currentDate = new Date();
     const currentDayNumber = currentDate.getDate();
     const currentMonth = currentDate.getMonth();

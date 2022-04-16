@@ -72,6 +72,10 @@
     .calendar-date {
         height: 80px;
     }
+
+    .today {
+        background-size: 2.6em;  
+    }
 }
 
 

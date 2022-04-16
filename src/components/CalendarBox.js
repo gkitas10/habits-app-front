@@ -25,14 +25,9 @@ const CalendarBox = ({ monthandyear, setMonthAndYear, selecteddaywithlist, setSe
     });
     
     const [ dayandperformance, setDayandperformance ] = useState({});
-    console.log(dayandperformance);
     
     const [ highlighteddate, setHighlighteddate ] = useState('');
     
-    // const [ selectedday, setSelectedday ] = useState({
-    //     date:'',
-    //     tasklist:''
-    // });
     const { getAccessTokenSilently } = useAuth0();
     //Media queries
     const isMobile = useMediaQuery({
@@ -46,23 +41,6 @@ const CalendarBox = ({ monthandyear, setMonthAndYear, selecteddaywithlist, setSe
     const isDesktop = useMediaQuery({
         query: '(min-width: 1024px)'
     })
-
-//     useEffect(() => {
-//         console.log('exec1');
-//         if(monthandyear !== '') {
-//             const firstDayMonthAndYear = new Date(monthandyear.replace(/-/, '\/'));
-//             const { monthname, year, monthNumber, startDay } = getDateDataForState(firstDayMonthAndYear);
-    
-//             setMonth({
-//                 ...month,
-//                 startday:startDay,
-//                 monthnumber:monthNumber,
-//                 month:monthname,
-//                 year:year,
-//                 totalmonthdays:getMonthDays(monthNumber, startDay, year)
-//             })
-//         }
-// }, [monthandyear])
 
     useEffect(() => {
         const getDays = async () => {
@@ -98,7 +76,6 @@ const CalendarBox = ({ monthandyear, setMonthAndYear, selecteddaywithlist, setSe
     }, [month])  
 
     useEffect(() => {
-        console.log(updatedayandperformance)
            setDayandperformance({
                ...dayandperformance,
                ...updatedayandperformance
@@ -127,12 +104,14 @@ const CalendarBox = ({ monthandyear, setMonthAndYear, selecteddaywithlist, setSe
                 month.totalmonthdays.map((daynumber, idx) => (
                     idx < month.startday ? 
                     <CalendarDate
+                        key={idx}
                         year={month.year}
                         monthnumber={month.monthnumber}
                         daynumber={daynumber}
                         lastmonth={true}
                     /> :
                     <CalendarDate
+                        key={idx}
                         year={month.year}
                         monthnumber={month.monthnumber}
                         daynumber={daynumber}

@@ -11,12 +11,6 @@ const Calendar = () => {
     const [ monthandyear, setMonthAndYear ] = useState('');
     const [ tasklists, setTaskLists ] = useState([]);
     const [ updatedayandperformance, setUpdatedayandperformance ] = useState({});
-    console.log(updatedayandperformance);
-    //Probando custom hook
-    // const [ selectedday, setSelectedday ] = useState({
-    //     date:'',
-    //     tasklist:''
-    // });
     
     const [ selecteddaywithlist, setSelectedDayWithList, SelectList ] = useSelectList(tasklists, /*selectedday*/);
 
