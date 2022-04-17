@@ -13,6 +13,9 @@ const Navbar = () => {
             <li className='header__li'>
                 <Link to="/calendar" className='header__link'>Calendario</Link>
             </li>
+            <li className='header__li'>
+                <Link to="/stats" className='header__link'>Stats</Link>
+            </li>
         </ul>
      );
 }
