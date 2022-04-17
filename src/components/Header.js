@@ -7,8 +7,7 @@ import { useState } from 'react';
 import NavulMobile from './NavulMobile';
 
 const Header = () => {
-    const { isAuthenticated, user } = useAuth0();
-    console.log(user);
+    const { isAuthenticated } = useAuth0();
     const [ togglenav, setTogglenav ] = useState(false);
     return ( 
         <div className="header">
