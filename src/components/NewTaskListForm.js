@@ -93,7 +93,6 @@ const NewTaskListForm = () => {
     }
     //get lists w that name
     const responseArr = await getTaskListsForCheck(newtasklist.listname);
-    console.log(responseArr);
     //Check if there are any lists that match
       if(responseArr.length > 0) {
         setShowalert(true)
@@ -157,14 +156,6 @@ const NewTaskListForm = () => {
     }
   }
 
-  // const createAndUpdateTasklist = async () => {
-  //   try {
-  //     await axiosClient.put(`/update-tasklist/${}`)
-  //   } catch (error) {
-  //     console.log();
-  //   }
-  // }
-
   const handleClickNo = () => {
     setShowalert(false)
   }
@@ -194,7 +185,6 @@ const NewTaskListForm = () => {
     setShowalert(false);
 
     if(updatedTasklistDB) {
-      console.log(updatedTasklistDB);
       setAlertcontent('Lista editada exitosamente')
 
       setShowsuccessalert(true);
@@ -206,18 +196,6 @@ const NewTaskListForm = () => {
       setShowerroralert(true);
       setTimerid(setTimeout(() => { setShowerroralert(false) }, 4000));
     }
-
-    // setShowsuccessalert(true);
-    // setTimerid(setTimeout(() => { setShowsuccessalert(false) }, 4000));
-
-  //     saveTaskList({
-  //     ...newtasklist,
-  //     tasks:[...rows],
-  //     created:new Date().toISOString(),
-  //     userid:sub
-  // });
-   
-
   }
 
   const Alert = <div className='newtasklistform__confirm-alert'>

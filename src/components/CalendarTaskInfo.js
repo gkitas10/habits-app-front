@@ -118,7 +118,6 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
                 }})
                 //set 2nd arg true 
                 refreshCalendarBox(deletedDayDB.data.deletedDayDB, true)
-                console.log(deletedDayDB.data.deletedDayDB);
                 setShowconfirm(false)
                 setAlertcontent('La información de esta fecha ha sido eliminada')
                 setShowsuccessalert(true);
@@ -154,7 +153,9 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
                         }
                         
                     {tasks.map((task, idx) => (
-                        <div className="taskinfo__row">
+                        <div className="taskinfo__row"
+                            key={task._id}
+                        >
                             <div className="taskinfo__name">{ task.name}</div>
                             <div className="tasinfo__valuepercentage">{ task.valuepercentage }</div>
                             <div className="taskinfo__title-container">

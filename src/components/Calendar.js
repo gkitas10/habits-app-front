@@ -19,7 +19,6 @@ const Calendar = () => {
     }
 
     const refreshCalendarBox = (updatedDayDB, refreshondelete) => { 
-        console.log(updatedDayDB);
         const dayKey = updatedDayDB.date.slice(8,10)[0] == '0' ? updatedDayDB.date.slice(8,10)[1] : updatedDayDB.date.slice(8,10);
 
         const updateobj = {

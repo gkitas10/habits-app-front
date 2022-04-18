@@ -37,8 +37,8 @@
         display:none;
     }
 }
-
-@media screen and (min-width:600px) {
+/*Adjustment for my personal phone*/
+@media screen and (min-width:580px) {
     .calendar__calendar-box-view {
         width: 90%;
     }
@@ -51,7 +51,7 @@
     }
 }
 
-@media screen and (min-width:600px) {
+/* @media screen and (min-width:600px) {
     .calendar__calendar-box-view {
         width: 80%;
     }
@@ -59,7 +59,7 @@
     .calendar__calendar-date-view {
         width: 80%;
     }
-}
+} */
 
 @media screen and (min-width:1024px) {
     .calendar__calendar-box-view {
