@@ -21,7 +21,6 @@ const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate
     let selectedDateStyle = highlighteddate === componentDateString ? 'selected-date' : null;
     //Class based on performance
     const performanceStyle = getPerformanceStyle(performanceDB, performanceonscreen, daynumber, selecteddaywithlist);
-    const [ performancestyle, setPerformancestyle ] = useState(performanceStyle);
     
     const handleClick = async () => {
         if(!lastmonth) {    
@@ -65,7 +64,7 @@ const CalendarDate = ({ year, monthnumber, daynumber, lastmonth, highlighteddate
     return ( 
         <div
         onClick={ handleClick }
-        className={`calendar-date ${monthStyle} ${todayStyle} ${selectedDateStyle} ${performanceStyle} ${performancestyle}`}>
+        className={`calendar-date ${monthStyle} ${todayStyle} ${selectedDateStyle} ${performanceStyle}`}>
             <div className='calendar-date__daynumber'>
                 { daynumber }
             </div>
