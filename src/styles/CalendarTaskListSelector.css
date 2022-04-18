@@ -12,8 +12,8 @@
     font-size: 1.3rem;
     margin-bottom: 0.4rem;
 }
-
-@media screen and (min-width:600px) {
+/*personal phone adjustment*/
+@media screen and (min-width:580px) {
     .calendar-date-view-selector {
         align-items: flex-start;
     }

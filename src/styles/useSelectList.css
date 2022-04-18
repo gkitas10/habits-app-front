@@ -1,8 +1,8 @@
 .tasklist-selector {
     min-height: 1.7rem;
 }
-
-@media screen and (min-width:600px) {
+/*personal phone adjustment*/
+@media screen and (min-width:580px) {
     .tasklist-selector {
         width: 100%;
     }

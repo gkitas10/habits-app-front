@@ -33,8 +33,8 @@
 }
 
 
-
-@media screen and (min-width:600px) {
+/*Personal phone adjustment*/
+@media screen and (min-width:580px) {
     .header {
         height: 15vh;
     }
