@@ -23,7 +23,7 @@
     font-size: 1.1em;
 }
 
-@media screen and (min-width:600px) {
+@media screen and (min-width:580px) {
     .header__ul-mobile {
         top:15vh;
     }
