@@ -1,0 +1,15 @@
+.tutorial-step {
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-step__img-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.tutorial-step__img {
+    max-width: 100%;
+    width: 50%;
+    
+}
