@@ -13,6 +13,9 @@ const NavulMobile = () => {
             <li className='header__li-mobile'>
                 <Link to="/calendar" className='header__link-mobile'>Calendario</Link>
             </li>
+            <li className='header__li-mobile'>
+                <Link to="/tutorial" className='header__link-mobile'>Tutorial</Link>
+            </li>
         </ul>
      );
 }
