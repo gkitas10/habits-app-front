@@ -1,16 +1,16 @@
 import CalendarBox from "./CalendarBox";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import '../styles/Calendar.css';
 import CalendarTaskListSelector from "./CalendarTaskListSelector";
-import CalendarTaskForm from "./CalendarTaskForm";
 import CalendarTaskInfo from "./CalendarTaskInfo";
 import useSelectList from "./custom-hooks/useSelectList";
-import Stats from "./Stats";
+import ColorCode from "./ColorCode";
 
 const Calendar = () => {
     const [ monthandyear, setMonthAndYear ] = useState('');
     const [ tasklists, setTaskLists ] = useState([]);
     const [ updatedayandperformance, setUpdatedayandperformance ] = useState({});
+    const [ showcolorcode, setShowcolorcode ] = useState(false);
     
     const [ selecteddaywithlist, setSelectedDayWithList, SelectList ] = useSelectList(tasklists, /*selectedday*/);
 
@@ -26,9 +26,10 @@ const Calendar = () => {
         }
 
         setUpdatedayandperformance(updateobj)
-        // {
-        //     [dayKey]:updatedDayDB.performance
-        // }
+    }
+
+    const handleClick = () => {
+        setShowcolorcode(!showcolorcode);
     }
     
     return (  
@@ -42,6 +43,12 @@ const Calendar = () => {
                 updatedayandperformance={updatedayandperformance}
                 />
             </div>
+            <div className="calendar__showcode-btn-cont">
+                <button className="calendar__showcode-btn" onClick={handleClick}>Mostrar código de colores</button>
+            </div>
+            
+            { showcolorcode && <ColorCode/> }
+            
             { 
                 selecteddaywithlist.date !== '' && (<div className='calendar__calendar-date-view'>
                 <CalendarTaskListSelector
