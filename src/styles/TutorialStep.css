@@ -1,6 +1,16 @@
 .tutorial-step {
     display: flex;
     flex-direction: column;
+    margin-top: 2em;
+    width: 90%;
+}
+
+.tutorial-step__step-instruc {
+    margin-bottom: 1em;
+}
+
+.tutorial-step__followup {
+    margin-bottom: 1em;
 }
 
 .tutorial-step__img-cont {
@@ -10,6 +20,6 @@
 
 .tutorial-step__img {
     max-width: 100%;
-    width: 50%;
+    
     
 }
