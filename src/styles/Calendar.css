@@ -4,6 +4,7 @@
     min-height: 100vh;
     align-items: center;
     background-color: #444442;
+    padding-bottom: 1em;
 }
 
 .calendar {
@@ -17,6 +18,18 @@
     border: none;
     margin-bottom: 4em;
     width: 90%;
+}
+
+
+
+.calendar__showcode-btn {
+    background-color: cadetblue;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    padding: 0.3em 0.9em;
+    border-radius: 2px;
+    align-self: flex-start;
 }
 
 .calendar__calendar-date-view {
