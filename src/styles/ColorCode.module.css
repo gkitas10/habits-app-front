@@ -1,0 +1,105 @@
+.color-code {
+    background-color: white;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.row {
+    display: flex;
+    padding-left: 1em;
+}
+
+.titles-row {
+    margin-bottom: 1em;
+}
+
+.title {
+    width: 50%;
+}
+
+.color-cont {
+    width: 50%;
+    display: flex;
+}
+
+.color {
+    width: 50%;
+}
+
+.verylow-performance {
+    background-color: #CF3230;
+    
+}
+
+.low-performance {
+    background-color: #FF5733;
+}
+
+.reg-performance {
+    background-color: #EF750F;
+}
+
+.good-performance {
+    background-color: #96E113;
+}
+
+.great-performance {
+    background-color: #E3D917;
+}
+
+@media screen and (min-width:580px) {
+    .color {
+        width: 18%;
+    }
+
+    .row {
+        padding-left: 1.5em;
+    }
+
+    /* .title-color {
+        width: 74%;
+    }
+
+    .title-range {
+        width: 26%;
+    }
+
+    .color-cont {
+        width: 74%;
+    } */
+}
+
+@media screen and (min-width:768px) {
+    .title-color {
+        width: 74%;
+    }
+
+    .title-range {
+        width: 26%;
+    }
+
+    .color-cont {
+        width: 74%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .color-code {
+        width: 60%;
+    }
+
+    .title-color {
+        width: 50%;
+    }
+
+    .title-range {
+        width: 50%;
+    }
+
+    .color-cont {
+        width: 50%;
+    }
+}
