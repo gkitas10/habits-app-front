@@ -1,8 +1,9 @@
 import styles from '../styles/ColorCode.module.css';
 
-const ColorCode = () => {
+const ColorCode = ({ setShowcolorcode }) => {
     return ( 
         <div className={styles['color-code']}>
+            <div className={styles['close-btn']} onClick={() => setShowcolorcode(false)}>X</div>
             <div className={styles.row+' '+styles['titles-row']}>
                 <div className={styles.title+' '+styles['title-color']}>
                     Color

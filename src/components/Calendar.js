@@ -47,7 +47,7 @@ const Calendar = () => {
                 <button className="calendar__showcode-btn" onClick={handleClick}>Mostrar código de colores</button>
             </div>
             
-            { showcolorcode && <ColorCode/> }
+            { showcolorcode && <ColorCode setShowcolorcode={setShowcolorcode}/> }
             
             { 
                 selecteddaywithlist.date !== '' && (<div className='calendar__calendar-date-view'>
