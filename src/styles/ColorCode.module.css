@@ -5,6 +5,14 @@
     flex-direction: column;
     padding-top: 1em;
     padding-bottom: 1em;
+    position: relative;
+}
+
+.close-btn {
+    position:absolute;
+    right: 1em;
+    top:1em;
+    cursor: pointer;
 }
 
 .row {
@@ -74,15 +82,15 @@
 
 @media screen and (min-width:768px) {
     .title-color {
-        width: 74%;
+        width: 50%;
     }
 
     .title-range {
-        width: 26%;
+        width: 50%;
     }
 
     .color-cont {
-        width: 74%;
+        width: 50%;
     }
 }
 

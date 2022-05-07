@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { getPerformanceStyle } from '../functions/CalendarDate/getPerformanceStyle';
 import '../styles/CalendarDate.css';
 import axiosClient from '../axios';
