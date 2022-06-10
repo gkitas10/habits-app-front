@@ -9,3 +9,10 @@
     margin-top: 1em;
     width: 90%;
 }
+
+@media screen and (min-width:1224px){
+    .tutorial{
+        font-size: 1.2rem;
+    }
+    
+}

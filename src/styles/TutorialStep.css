@@ -16,10 +16,17 @@
 .tutorial-step__img-cont {
     display: flex;
     justify-content: center;
+    
 }
 
 .tutorial-step__img {
     max-width: 100%;
-    
+}
+
+@media screen and (min-width:1224px) {
+
+    .tutorial-step__img-cont {
+        margin-bottom: 2em;
+    }
     
 }
