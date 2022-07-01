@@ -1,0 +1,84 @@
+{
+    "header":{
+        "home":"Home",
+        "create":"Create tasklist",
+        "calendar":"Calendar",
+        "tutorial":"Tutorial"
+    },
+    "home":{
+        "startnow":"Start now"
+    },
+    "createtasklistform":{
+        "createtasklist":"Create tasklist",
+        "taskname":"taskname",
+        "addfield":"Add field",
+        "formrow":{
+            "task":"Task",
+            "importance":"Importance %",
+            "deletebtn":"Delete"
+        },
+        "createbtn":"Create",
+        "alerts":{
+            "emptyname":"Name field can not be empty",
+            "emptytask":"Task field can not be empty",
+            "%completed":"The percentages of all tasks must add up to 100",
+            "successful":"Tasklist created successfully",
+            "nameexists":"A list with this name already exists, would you like to overwrite it?"
+        }
+    },
+    "calendardays":{
+        "mon":"Monday",
+        "tue":"Tuesday",
+        "wed":"Wednesday",
+        "thu":"Thursday",
+        "fri":"Friday",
+        "sat":"Saturday",
+        "sun":"Sunday"
+    },
+    "calendardaysmobile":{
+        "mon":"M",
+        "tue":"T",
+        "wed":"W",
+        "thu":"Th",
+        "fri":"F",
+        "sat":"S",
+        "sun":"Su"
+    },
+    "calendardaystablet":{
+        "mon":"Mon",
+        "tue":"Tue",
+        "wed":"Wed",
+        "thu":"Thu",
+        "fri":"Fri",
+        "sat":"Sat",
+        "sun":"Sun"
+    },
+    "calendarshowbtn":"Show color code",
+    "listselector":"Select a tasklist",
+    "calendarinfo":{
+        "task":"Task",
+        "importance":"Importance (%)",
+        "completed":"Completed (%)",
+        "multiplied":"%'s Multiplied",
+        "savebtn":"Save",
+        "performance":"Performance",
+        "erasequestion":"Would you like to delete this date's information?",
+        "confirmbtn":"Confirm",
+        "cancelbtn":"Cancel",
+        "alerts":{
+            "completed":"The field 'Completed' must contain a number between 0 and 100",
+            "completedsaved":"Percentage completed saved",
+            "datedeleted":"This date's information has been deleted"
+        }
+    },
+    "tutorial": {
+        "step1":"1. Click 'Start now' or 'Create task list' to go to the form",
+        "step2":"2. Choose a name for your list and create some tasks. Assign an importance in percentage to each one",
+        "step3":"3. Click on 'Calendar'",
+        "step4":"4. Select a day from the calendar",
+        "step5":"5. Select the list you want to use for the selected day, in this case 'My list'",
+        "step5follow":"Assign a percentage of completion to each task. For example, if you should have worked 8 hours but you have only worked 4, enter 50. Click on 'save' and observe your performance",
+        "finalInstruc":"You can set a different list for each day or have a list for every day, at the end of the month you will see something like this:",
+        "colorCodes":"Performance colors code is as follows:"
+    }
+}

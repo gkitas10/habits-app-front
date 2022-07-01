@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
+import './i18n';
 
 ReactDOM.render(
   /*<React.StrictMode>*/

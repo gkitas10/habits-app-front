@@ -1,0 +1,84 @@
+{
+    "header":{
+        "home":"Inicio",
+        "create":"Crear lista de tareas",
+        "calendar":"Calendario",
+        "tutorial":"Tutorial"
+    },
+    "home":{
+        "startnow":"Empieza ya"
+    },
+    "createtasklistform":{
+        "createtasklist":"Crea una lista",
+        "taskname":"Nombre de la lista de tareas",
+        "addfield":"Agregar campo de tarea",
+        "formrow":{
+            "task":"Tarea",
+            "importance":"Relevancia %",
+            "deletebtn":"Eliminar"
+        },
+        "createbtn":"Crear",
+        "alerts":{
+            "emptyname":"El campo de nombre de la lista no puede estar vacío",
+            "emptytask":"El campo de tarea no puede estar vacío",
+            "%completed":"Los porcentajes de todas las tareas deben sumar 100",
+            "successful":"Lista creada exitosamente",
+            "nameexists":"Ya existe una lista con este nombre, deseas sobreescribirla?"
+        }
+    },
+    "calendardays":{
+        "mon":"Lunes",
+        "tue":"Martes",
+        "wed":"Miércoles",
+        "thu":"Jueves",
+        "fri":"Viernes",
+        "sat":"Sábado",
+        "sun":"Domingo"
+    },
+    "calendardaysmobile":{
+        "mon":"L",
+        "tue":"M",
+        "wed":"Mi",
+        "thu":"J",
+        "fri":"V",
+        "sat":"S",
+        "sun":"D"
+    },
+    "calendardaystablet":{
+        "mon":"Lun",
+        "tue":"Mar",
+        "wed":"Miér",
+        "thu":"Jue",
+        "fri":"Vier",
+        "sat":"Sab",
+        "sun":"Dom"
+    },
+    "calendarshowbtn":"Mostrar código de colores",
+    "listselector":"Selecciona una lista de tareas",
+    "calendarinfo":{
+        "task":"Tarea",
+        "importance":"Relevancia (%)",
+        "completed":"Completado (%)",
+        "multiplied":"%'s Multiplicados",
+        "savebtn":"Guardar",
+        "performance":"Rendimiento",
+        "erasequestion":"¿Quieres borrar la información de esta fecha?",
+        "confirmbtn":"Confirmar",
+        "cancelbtn":"Cancelar",
+        "alerts":{
+            "completed":"El campo 'completado' tiene que contener un número entre 0 y 100",
+            "completedsaved":"Porcentaje completado guardado",
+            "datedeleted":"La información de esta fecha ha sido eliminada"
+        }
+    },
+    "tutorial": {
+        "step1":"Paso 1. Da click en 'Empieza ya' o en 'Crear lista de tareas' para dirigirte al formulario",
+        "step2":"Paso 2. Elige un nombre para tu lista y crea algunas tareas. Asignales a las tareas una relevancia en %",
+        "step3":"Paso 3. Da click en Calendario",
+        "step4":"Paso 4. Selecciona una dia del calendario",
+        "step5":"Paso 5. Selecciona la lista que desees utilizar para el día seleccionado, en este caso 'Mi lista'.",
+        "step5follow":"Asigna un porcentaje de completado a cada tarea. Por ejemplo si debías trabajar 8hrs pero solo has trabajado 4, coloca 50. Da click en enviar y observa tu rendimiento",
+        "finalInstruc":"Puedes colocar una lista diferente para cada dia o tener una lista para todos los días, al final del mes podras ver algo como esto:",
+        "colorCodes":"Los codigos de color del rendimiento son los siguientes:"
+    }
+}

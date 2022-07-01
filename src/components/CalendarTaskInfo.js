@@ -3,10 +3,11 @@ import axiosClient from "../axios";
 import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/CalendarTaskInfo.css';
 import { useMediaQuery } from "react-responsive";
+import { useTranslation} from "react-i18next";
 import TaskinfoTableMobile from "./TaskinfoTableMobile";
 
 const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refreshCalendarBox }) => {
-    
+    const { t } = useTranslation();
     const { getAccessTokenSilently } = useAuth0();
     const tasklist = selecteddaywithlist.tasklist;
     const _id = tasklist?._id;
@@ -80,7 +81,7 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
         }
 
         if(!isValid) {
-            setAlertcontent('El campo de completado tiene que contener un número entre 0 y 100')
+            setAlertcontent(t("calendarinfo.alerts.completed"))
             setShowerroralert(true);
             setTimerid(setTimeout(() => { setShowerroralert(false)}, 4000));
 
@@ -95,7 +96,7 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
                         Authorization:`Bearer ${token}`
                 }});    
 
-            setAlertcontent('Porcentaje completado guardado');
+            setAlertcontent(t("calendarinfo.alerts.completedsaved"));
             setShowsuccessalert(true);
             setTimerid(setTimeout(() => { setShowsuccessalert(false) }, 4000));
             refreshCalendarBox(updatedTasksDB.data.updatedDay)
@@ -119,7 +120,7 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
                 //set 2nd arg true 
                 refreshCalendarBox(deletedDayDB.data.deletedDayDB, true)
                 setShowconfirm(false)
-                setAlertcontent('La información de esta fecha ha sido eliminada')
+                setAlertcontent(t("calendarinfo.alerts.datedeleted"))
                 setShowsuccessalert(true);
                 setTimerid(setTimeout(() => { setShowsuccessalert(false) }, 4000));
         } catch (error) {
@@ -144,10 +145,10 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
                         {
                             tasklistid !== undefined ? (
                                 <div className="taskinfo__head">
-                                    <div className="taskinfo-head__name">Tarea</div>
-                                    <div className="taskinfo-head__valuepercentage">Relevancia (%)</div>
-                                    <div className="taskinfo-head__completed"> Completado (%) </div>
-                                    <div className="taskinfo-head__multiplied"> %'s Multiplicados</div>
+                                    <div className="taskinfo-head__name">{t("calendarinfo.task")}</div>
+                                    <div className="taskinfo-head__valuepercentage">{t("calendarinfo.importance")}</div>
+                                    <div className="taskinfo-head__completed">{t("calendarinfo.completed")}</div>
+                                    <div className="taskinfo-head__multiplied">{t("calendarinfo.multiplied")}</div>
                                 </div>
                             ) : null
                         }
@@ -172,14 +173,14 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
                     ))}
                     </div>
                     <div className="task-info__submit-btn-container">
-                    <input className="task-info__submit-btn" type='submit' value='Enviar'/> 
+                    <input className="task-info__submit-btn" type='submit' value={t("calendarinfo.savebtn")}/> 
                     </div>
                         
                 </form>
             </div>
 
             <div className="calendar-task-info__performance-container">
-                <div className="calendar-task-info__performance-title">Rendimiento</div>
+                <div className="calendar-task-info__performance-title">{t("calendarinfo.performance")}</div>
                 <div className="calendar-task-info__performance">
                     { isNaN(performance) ? '-' : performance.toFixed(2) + '%' } 
                 </div>
@@ -187,11 +188,11 @@ const CalendarTaskInfo = ({ selecteddaywithlist, setPerformanceonscreen, refresh
             
             <div className="calendar-task-info__delete-container">
                 <div className="calendar-task-info__delete-question" onClick={handleClickOnDelete}>
-                    ¿Quieres borrar la información de esta fecha?
+                    {t("calendarinfo.erasequestion")}
                 </div>
                 { showconfirm ? ( <div className="calendar-task-info__confirm-btn-container">
-                    <button className="calendar-task-info__confirm-btn" onClick={handleClickOnConfirm}>Confirmar</button>
-                    <button className="calendar-task-info__cancel-btn" onClick={handleClickOnCancel}>Cancelar</button>
+                    <button className="calendar-task-info__confirm-btn" onClick={handleClickOnConfirm}>{t("calendarinfo.confirmbtn")}</button>
+                    <button className="calendar-task-info__cancel-btn" onClick={handleClickOnCancel}>{t("calendarinfo.cancelbtn")}</button>
                 </div> ) : null }
             </div>
             { showsuccessalert ? Successalert : null }

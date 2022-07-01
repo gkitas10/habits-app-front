@@ -1,13 +1,17 @@
+import { useTranslation} from "react-i18next";
+
 const CalendarBoxDaysMobile = () => {
+  const { t } = useTranslation();
+
     return ( 
         <>
-            <div className="calendar-box__day">L</div>
-            <div className="calendar-box__day">M</div>
-            <div className="calendar-box__day">Mi</div>
-            <div className="calendar-box__day">J</div>
-            <div className="calendar-box__day">V</div>
-            <div className="calendar-box__day">S</div>
-            <div className="calendar-box__day">D</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.mon")}</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.tue")}</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.wed")}</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.thu")}</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.fri")}</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.sat")}</div>
+            <div className="calendar-box__day">{t("calendardaysmobile.sun")}</div>
         </>
      );
 }

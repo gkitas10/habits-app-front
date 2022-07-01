@@ -5,10 +5,15 @@ import Navul from './Navul';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 import NavulMobile from './NavulMobile';
+import { useTranslation} from "react-i18next";
+
 
 const Header = () => {
     const { isAuthenticated } = useAuth0();
     const [ togglenav, setTogglenav ] = useState(false);
+
+    const { i18n } = useTranslation();
+
     return ( 
         <div className="header">
             <svg className='header__burger-icon' viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
