@@ -11,6 +11,12 @@
     color:white;
 }
 
+.header__select {
+    border: none;
+    border-radius: 2px;
+    height: 20px;
+}
+
 @media only screen and (max-width: 768px) {
     .header__ul {
         display: none;

@@ -3,8 +3,10 @@ import axiosClient from '../axios';
 import NewTaskListFormRow from './NewTaskListFormRow';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../styles/NewTaskListForm.css';
+import { useTranslation} from "react-i18next";
 
 const NewTaskListForm = () => {
+  const { t } = useTranslation();
   const { getAccessTokenSilently, user } = useAuth0()
   const { sub } = user;
   const newTaskListInitialState = {
@@ -57,7 +59,7 @@ const NewTaskListForm = () => {
     e.preventDefault();
     //Validate listname
     if(newtasklist.listname === '') {
-      setAlertcontent('El campo de nombre de la lista no puede estar vacío')
+      setAlertcontent(t("createtasklistform.alerts.emptyname"))
       setShowerroralert(true);
       setTimerid(setTimeout(() => { setShowerroralert(false)}, 4000));
 
@@ -73,7 +75,7 @@ const NewTaskListForm = () => {
     }
 
     if(nameIsEmpty) {
-      setAlertcontent('El campo de tarea no puede estar vacío')
+      setAlertcontent(t("createtasklistform.alerts.emptytask"))
       setShowerroralert(true);
       setTimerid(setTimeout(() => { setShowerroralert(false)}, 4000));
 
@@ -84,7 +86,7 @@ const NewTaskListForm = () => {
     const sum = rows.reduce((acc, curr, idx, arr) => +curr.valuepercentage + acc, 0);
     
     if(sum !== 100) {
-      setAlertcontent('Los porcentajes de todas las tareas deben sumar 100')
+      setAlertcontent(t("createtasklistform.alerts.%completed"))
       setShowerroralert(true);
       setShowsuccessalert(false)
       setTimerid(setTimeout(() => { setShowerroralert(false)}, 4000));
@@ -108,7 +110,7 @@ const NewTaskListForm = () => {
     //showAlert
     setShowsuccessalert(true);
     setShowerroralert(false)
-    setAlertcontent('Lista creada exitosamente')
+    setAlertcontent(t("createtasklistform.alerts.successful"))
     setTimerid(setTimeout(() => { setShowsuccessalert(false)}, 4000));
         }
     
@@ -216,7 +218,7 @@ const NewTaskListForm = () => {
       <form className='newtasklistform'
               onSubmit={handleSubmit}
           >
-          <div className='newtasklistform__instruc'>Crea una lista</div>
+          <div className='newtasklistform__instruc'>{t("createtasklistform.createtasklist")}</div>
               
           <input
             className='newtasklist__form-control newtasklist__listname-input'
@@ -224,10 +226,10 @@ const NewTaskListForm = () => {
             name='listname'
             value={listname}
             onChange={handleInputChange}
-            placeholder='Nombre de la lista de tareas'
+            placeholder={t("createtasklistform.taskname")}
           />
           
-          <button onClick={handleOnAdd} type="button" className='newtasklistform__addtfield-btn'>Agregar campo de tarea</button>
+          <button onClick={handleOnAdd} type="button" className='newtasklistform__addtfield-btn'>{t("createtasklistform.addfield")}</button>
 
           {
               rows.map((row, index) => (
@@ -241,7 +243,7 @@ const NewTaskListForm = () => {
               ))
           }
 
-          { rows.length > 0 ? ( <input className='newtasklistform__submit-btn' type='submit' value='Crear'/> ) : null }
+          { rows.length > 0 ? ( <input className='newtasklistform__submit-btn' type='submit' value={t("createtasklistform.createbtn")}/> ) : null }
       </form>
       { showalert ? Alert : null }
       { showsuccessalert ? Successalert : null }

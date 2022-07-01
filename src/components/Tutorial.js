@@ -6,8 +6,10 @@ import CalendarImg from '../assets/tutorial/calendar.png';
 import CalendarselectImg from '../assets/tutorial/calendar-select.png';
 import CalendarperformanceImg from '../assets/tutorial/calendar-performance.png';
 import CalendarcoloredImg from '../assets/tutorial/calendar-colored.png';
+import { useTranslation} from "react-i18next";
 
 const Tutorial = () => {
+    const { t } = useTranslation();
     const steps = {
         step1:"Paso 1. Da click en 'Empieza ya' o en 'Crear lista de tareas' para dirigirte al formulario",
         step2:"Paso 2. Elige un nombre para tu lista y crea algunas tareas. Asignales a las tareas una relevancia en %",
@@ -19,35 +21,34 @@ const Tutorial = () => {
         finalInstruc:`Puedes colocar una lista diferente para cada dia o tener una lista para todos los días, al final del mes
         podras ver algo como esto:`,
         colorCodes:`Los codigos de color del rendimiento son los siguientes:`
-        
     }
 
     return ( 
         <div className="tutorial">
             <TutorialStep
             img={StartImg}
-            step={steps.step1}
+            step={t("tutorial.step1")}
             />
             <TutorialStep
             img={FillinformImg}
-            step={steps.step2}
+            step={t("tutorial.step2")}
             />
             <TutorialStep
             img={CalendarImg}
-            step={steps.step3}
+            step={t("tutorial.step3")}
             />
             <TutorialStep
             img={CalendarselectImg}
-            step={steps.step4}
+            step={t("tutorial.step4")}
             />
             <TutorialStep
             img={CalendarperformanceImg}
-            step={steps.step5}
-            followup={steps.step5follow}
+            step={t("tutorial.step5")}
+            followup={t("tutorial.step5follow")}
             />
              <TutorialStep
             img={CalendarcoloredImg}
-            step={steps.finalInstruc}
+            step={t("tutorial.finalInstruc")}
             />
             
         </div>

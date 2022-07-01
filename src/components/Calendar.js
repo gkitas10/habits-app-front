@@ -5,8 +5,10 @@ import CalendarTaskListSelector from "./CalendarTaskListSelector";
 import CalendarTaskInfo from "./CalendarTaskInfo";
 import useSelectList from "./custom-hooks/useSelectList";
 import ColorCode from "./ColorCode";
+import { useTranslation} from "react-i18next";
 
 const Calendar = () => {
+    const { t } = useTranslation();
     const [ monthandyear, setMonthAndYear ] = useState('');
     const [ tasklists, setTaskLists ] = useState([]);
     const [ updatedayandperformance, setUpdatedayandperformance ] = useState({});
@@ -44,7 +46,7 @@ const Calendar = () => {
                 />
             </div>
             <div className="calendar__showcode-btn-cont">
-                <button className="calendar__showcode-btn" onClick={handleClick}>Mostrar código de colores</button>
+                <button className="calendar__showcode-btn" onClick={handleClick}>{t("calendarshowbtn")}</button>
             </div>
             
             { showcolorcode && <ColorCode setShowcolorcode={setShowcolorcode}/> }
